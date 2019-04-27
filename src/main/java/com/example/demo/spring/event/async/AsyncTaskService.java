@@ -1,4 +1,4 @@
-package com.example.demo.service.async;
+package com.example.demo.spring.event.async;
 
 
 import org.springframework.scheduling.annotation.Async;

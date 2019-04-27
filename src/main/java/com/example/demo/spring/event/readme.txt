@@ -1,0 +1,1 @@
+spring内部bean之间事件通信

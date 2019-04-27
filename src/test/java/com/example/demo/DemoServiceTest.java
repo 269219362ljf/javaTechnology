@@ -1,8 +1,8 @@
 package com.example.demo;
 
 
-import com.example.demo.service.async.AsyncTaskService;
-import com.example.demo.service.event.DemoPublisher;
+import com.example.demo.spring.event.async.AsyncTaskService;
+import com.example.demo.spring.event.event.DemoPublisher;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

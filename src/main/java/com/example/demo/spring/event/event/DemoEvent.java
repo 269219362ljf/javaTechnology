@@ -1,4 +1,4 @@
-package com.example.demo.service.event;
+package com.example.demo.spring.event.event;
 
 import lombok.Data;
 import org.springframework.context.ApplicationEvent;

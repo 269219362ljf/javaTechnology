@@ -1,4 +1,4 @@
-package com.example.demo.service.event;
+package com.example.demo.spring.event.event;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
