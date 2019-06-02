@@ -1,5 +1,7 @@
 package com.example.demo.rpc;
 
+import com.alibaba.fastjson.JSON;
+
 import java.io.InputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -30,28 +32,29 @@ public class RpcService implements Runnable {
             // 2. 获取请求数据，强转参数类型
             Object param = objIn.readObject();
             RpcRequest request = null;
-            if (!(param instanceof RpcRequest)) {
-                response.setResult("参数错误");
-                objOut.writeObject(response);
-                objOut.flush();
-                return;
-            } else {
-                request = (RpcRequest) param;
-            }
-            // 3. 查找并执行服务方法
-            System.out.println("要執行的类型为：" + request.getClassName());
-            Class<?> service = serviceRegistry.get(request.getClassName());
-            if (service != null) {
-                try {
-                    Method method = service.getMethod(request.getMethodName(), request.getParamTypes());
-                    Object result = method.invoke(service.newInstance(), request.getParams());
-                    // 4. 得到结果并返回
-                    response.setResult(result);
-                } catch (Exception e) {
-                    response.setError(e);
-                }
-            }
-            objOut.writeObject(response);
+            response.setResult("test rpc");
+//            if (!(param instanceof RpcRequest)) {
+//                response.setResult("参数错误");
+//                objOut.writeObject(response);
+//                objOut.flush();
+//                return;
+//            } else {
+//                request = (RpcRequest) param;
+//            }
+//            // 3. 查找并执行服务方法
+//            System.out.println("要執行的类型为：" + request.getClassName());
+//            Class<?> service = serviceRegistry.get(request.getClassName());
+//            if (service != null) {
+//                try {
+//                    Method method = service.getMethod(request.getMethodName(), request.getParamTypes());
+//                    Object result = method.invoke(service.newInstance(), request.getParams());
+//                    // 4. 得到结果并返回
+//                    response.setResult(result);
+//                } catch (Exception e) {
+//                    response.setError(e);
+//                }
+//            }
+            objOut.writeObject(JSON.toJSONString(response));
             objOut.flush();
             out.close();
             in.close();
