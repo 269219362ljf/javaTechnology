@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<kmodule xmlns="http://jboss.org/kie/6.0.0/kmodule">
+
+    <!-- packages?resoureces???? -->
+    <kbase name="kbase1" packages="kbase1">
+        <ksession name="session"/>
+    </kbase>
+
+</kmodule>
