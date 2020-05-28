@@ -7,10 +7,10 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
-public class GuavaTest {
+public class SetTest {
 
     @Test
-    public void setTest(){
+    public void test(){
         Set<Integer> oldset=new HashSet<>();
         oldset.addAll(Arrays.asList(1,2,3,4,256));
         Set<Integer> newset=new HashSet<>();

@@ -25,6 +25,7 @@
         <java.version>1.8</java.version>
         <fastjson.version>1.2.44</fastjson.version>
         <drools.version>7.31.0.Final</drools.version>
+        <mapstruct.version>1.3.1.Final</mapstruct.version>
     </properties>
 
 
@@ -90,6 +91,16 @@
             <version>18.0</version>
             <optional>true</optional>
         </dependency>
+
+
+
+        <dependency>
+            <groupId>org.mapstruct</groupId>
+            <artifactId>mapstruct</artifactId>
+            <version>${mapstruct.version}</version>
+        </dependency>
+
+
     </dependencies>
 
     <build>
@@ -104,6 +115,13 @@
                 <configuration>
                     <source>1.8</source>
                     <target>1.8</target>
+                    <annotationProcessorPaths>
+                        <path>
+                            <groupId>org.mapstruct</groupId>
+                            <artifactId>mapstruct-processor</artifactId>
+                            <version>${mapstruct.version}</version>
+                        </path>
+                    </annotationProcessorPaths>
                 </configuration>
             </plugin>
             <!-- drools的maven插件，缺少了会导致规则没跑起来 -->
